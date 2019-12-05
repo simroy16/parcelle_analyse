@@ -24,4 +24,4 @@ flore_raw$parcelle_id <- parcelle_id
 
 flore_raw$IDy <- NULL
 flore <- flore_raw
-rm(flore_raw, parcelle_raw)
+rm(flore_raw, parcelle_raw, l, annee, parcelle_id)
