@@ -19,3 +19,5 @@ lapply(n_i_p, install.packages, dependencies = TRUE)
 lapply(cran_packages, function(x){                                  #install packages
   library(x, character.only = TRUE, quietly = TRUE)
 })
+
+rm(n_i_p, cran_packages)
