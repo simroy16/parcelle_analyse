@@ -1,0 +1,12 @@
+#importer les library dont on va avoir besoin 
+
+library(drake)
+library(ggplot2)
+library(stringr)
+library(fishualize)
+library(dplyr)
+library(taxize)
+library(tidyr)
+library(readr)
+library(tidyverse)
+library(forcats)
