@@ -21,3 +21,7 @@ for(l in 1: length(flore_raw$IDy)) {
 }
 flore_raw$annee <- annee
 flore_raw$parcelle_id <- parcelle_id
+
+flore_raw$IDy <- NULL
+flore <- flore_raw
+rm(flore_raw, parcelle_raw)
