@@ -1,3 +1,4 @@
+source("R/00_set_up.R")
 
 # Loading data
 parcelle_file <- "parcelle.csv"
