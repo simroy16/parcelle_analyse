@@ -24,4 +24,16 @@ flore_raw$parcelle_id <- parcelle_id
 
 flore_raw$IDy <- NULL
 flore <- flore_raw
-rm(flore_raw, parcelle_raw, l, annee, parcelle_id)
+
+# split first column of pratique
+annee <- vector()
+
+for(l in 1: length(pratique_raw$IDy)) {
+  annee <- c(annee, substring(pratique_raw$IDy[l], first = nchar(as.character(pratique_raw$IDy[l]))-3))
+}
+pratique_raw$annee <- annee
+
+pratique_raw$IDy <- NULL
+pratique <- pratique_raw
+
+rm(flore_raw, parcelle_raw, l, annee, parcelle_id, pratique_raw)
