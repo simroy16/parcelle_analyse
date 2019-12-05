@@ -1,3 +1,6 @@
+# clean environment
+rm(list = ls())
+
 #CRAN packages vector
 cran_packages <- c(
   "drake",
