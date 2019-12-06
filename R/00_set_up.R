@@ -12,7 +12,8 @@ cran_packages <- c(
   "tidyr",
   "readr",
   "tidyverse",
-  "forcats"
+  "forcats",
+  "shiny"
 )
 
 n_i_p <- cran_packages[!(cran_packages %in% installed.packages())]  #n_i_p : not_in_packages
