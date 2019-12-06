@@ -1,0 +1,41 @@
+---
+title: "Presentation Projet Parcelle"
+author: "Simon, Pierre, Mathieu & Chloe"
+date: "06/12/2019"
+output: html_document
+---
+
+
+## Dataset presentation
+```{r setup, include=FALSE}
+source("R/02_cleaning_data.R")
+
+head(parcelle)
+
+```
+
+
+  -Flore data
+
+| Plant_1   | Plant_2 |
+|----------:|:----------|
+| Abondance | Abondance      |
+
+## Exploration data with shiny
+
+
+```{r echo = FALSE, out.width="50%"}
+source("R/shiny/server.R")
+
+shinyApp(ui = ui, server = server)
+
+```
+
+## Plot data 
+
+Cartographie des parcelles en fonction des cultures et de la matière organique dans le sol :
+
+```{r pressure, echo=FALSE}
+source("R/spatial_analyses/get_spatial_data.R")
+```
+
