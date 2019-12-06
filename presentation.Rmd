@@ -1,35 +1,60 @@
 ---
-title: "Présentation"
+title: "Présentation projet parcelle"
 author: "Simon ROY"
 date: "5 décembre 2019"
 output: ioslides_presentation
+seal: true
+yolo: false
+self_contained: false
+nature:
+  ratio: "4:3"
+titleSlideClass: ["right", "middle"]
+highlightStyle: 'zenburn'
+highlightLines: false
+countIncrementalSlides: false
+slideNumberFormat: "%current% / %total%"
+---
+class: center, middle
+
+##Data set presentation
+
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+##Data set presentation
+
+  -Parcelle data
+```{r presentation}
+source("R/02_cleaning_data.R")
+
+head(parcelle)
+
+```
+  -Flore data
+
+| species_1 | species_2 |
+|----------:|:----------|
+| data      | data      |
+
+---
+
+##Exploration data with shiny
+
+
+```{r shiny}
+
+Courage les gars !!
+
 ```
 
-## R Markdown
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+---
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+##Plot data 
 
-## Slide with Bullets
+```{r shiny}
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+Courage nous !!
 
-## Slide with R Output
-
-```{r cars, echo = TRUE}
-summary(cars)
 ```
 
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
-```
 
