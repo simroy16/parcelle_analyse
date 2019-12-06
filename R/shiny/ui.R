@@ -5,7 +5,7 @@ source("R/03_merging_dataframe.R")
 library(datasets)
 
 variable_x <- c("region", "plante_reference", "climat", "typo_pays_principale", "topographie",
-                "annee", "surface", "texture_sol")
+                "annee_releve", "surface", "texture_sol")
 variable_y <- c("altitude", "pct_mo","pct_ph","largeur_bordure")
 
 parcelle_flore <- as.data.frame(parcelle_flore)
@@ -24,7 +24,7 @@ ui <- fluidPage(
                   choices = variable_x),
       selectInput("variable_y", "Variable en y :", 
                   choices = variable_y),
-      hr(),
+      hr()
     ),
     
     # Create a spot for the barplot
