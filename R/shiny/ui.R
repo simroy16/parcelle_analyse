@@ -5,11 +5,12 @@ source("R/03_merging_dataframe.R")
 library(datasets)
 
 variable_x <- c("region", "plante_reference", "climat", "typo_pays_principale", "topographie",
-                "type_bordure","annee", "pourcent_pente","surface","texture_sol")
+                "annee", "surface", "texture_sol")
 variable_y <- c("altitude", "pct_mo","pct_ph","largeur_bordure")
 
-variable_y %in% colnames(parcelle_flore)# Use a fluid Bootstrap layout
-fluidPage(    
+parcelle_flore <- as.data.frame(parcelle_flore)
+
+ui <- fluidPage(    
   
   # Give the page a title
   titlePanel("Exploratory analysis"),
@@ -20,7 +21,7 @@ fluidPage(
     # Define the sidebar with one input
     sidebarPanel(
       selectInput("variable_x", "Variable en x :", 
-                  choices = varaible_x),
+                  choices = variable_x),
       selectInput("variable_y", "Variable en y :", 
                   choices = variable_y),
       hr(),
@@ -36,4 +37,3 @@ fluidPage(
 
 
 
-plot(parcelle_flore$pct_ph~parcelle_flore$surface, las=2)
