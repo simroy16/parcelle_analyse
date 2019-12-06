@@ -1,7 +1,7 @@
 source("R/02_cleaning_data.R")
 
 # On selectionne dans parcelles les variables interessantes et les coordonnees 
-parcelle_plot <- subset.data.frame(parcelle, select = c("coord_x", "coord_y", "code_parcelle.x", "plante_reference"))
+parcelle_plot <- subset.data.frame(parcelle, select = c("coord_x", "coord_y", "code_parcelle.x", "pct_mo", "plante_reference"))
 
 # Transformation de parcelle_plot en object spatial 
 parcelle_sf <- sf::st_as_sf(
@@ -12,6 +12,13 @@ parcelle_sf <- sf::st_as_sf(
 
 parcelle_sf %>% head(6)
 
+#Plot le mapview
+
+mapview::mapview(parcelle_sf, zcol = "plante_reference",  col.region = c("orange", "yellow", "green", "purple"), layer.name = "culture",
+                 cex = "pct_mo") 
+
+
+  
 
 # En dessous : optimisation de boucle for en lapply
 
