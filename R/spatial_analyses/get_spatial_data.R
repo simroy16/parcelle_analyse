@@ -1,7 +1,19 @@
 source("R/02_cleaning_data.R")
 
-coord <- subset.data.frame(parcelle, select = c("coord_x", "coord_y", "code_parcelle.x"))
+# On selectionne dans parcelles les variables interessantes et les coordonnees 
+parcelle_plot <- subset.data.frame(parcelle, select = c("coord_x", "coord_y", "code_parcelle.x"))
 
+# Transformation de parcelle_plot en object spatial 
+parcelle_sf <- sf::st_as_sf(
+  x      = parcelle_plot,
+  coords = c("coord_x", "coord_y"),
+  crs    = 4326
+)
+
+parcelle_sf %>% head(6)
+
+
+# En dessous : optimisation de boucle for en lapply
 
 # #boucle for
 # 
@@ -13,15 +25,17 @@ coord <- subset.data.frame(parcelle, select = c("coord_x", "coord_y", "code_parc
 # 
 # names(parcelle_st_points) <- coord$code_parcelle.x
 
-#version lapply
 
-parcelle_st_points <- lapply(1:dim(coord)[1], function(i){
-  
-  sf::st_point(c(coord$coord_x[i], coord$coord_y[i]))
-  
-})
+# #version lapply
+# 
+# parcelle_st_points <- lapply(1:dim(coord)[1], function(i){
+#   
+#   sf::st_point(c(coord$coord_x[i], coord$coord_y[i]))
+#   
+# })
+# 
+# names(parcelle_st_points) <- coord$code_parcelle.x
 
-names(parcelle_st_points) <- coord$code_parcelle.x
 
 # #version parallelle mclapply
 # library(parallel)
@@ -32,5 +46,3 @@ names(parcelle_st_points) <- coord$code_parcelle.x
 # }, mc.cores = 3)
 # 
 # names(parcelle_st_points) <- coord$code_parcelle.x
-
-
