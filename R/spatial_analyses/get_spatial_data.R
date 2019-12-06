@@ -1,7 +1,7 @@
 source("R/02_cleaning_data.R")
 
 # On selectionne dans parcelles les variables interessantes et les coordonnees 
-parcelle_plot <- subset.data.frame(parcelle, select = c("coord_x", "coord_y", "code_parcelle.x"))
+parcelle_plot <- subset.data.frame(parcelle, select = c("coord_x", "coord_y", "code_parcelle.x", "plante_reference"))
 
 # Transformation de parcelle_plot en object spatial 
 parcelle_sf <- sf::st_as_sf(
