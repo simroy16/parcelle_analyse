@@ -14,11 +14,11 @@ server <- function(input, output) {
          las=2)
   })
 }
-# 
+
+# brouillon :
 # plot(parcelle_flore[,input$variable_y[1]]~parcelle_flore[,input$variable_x[1]] )
 # 
 # WorldPhones[,input$region]
-# parcelle_flore[,variable_y[1]]~parcelle_flore[,variable_x[1]] 
+# parcelle_flore[,variable_y[1]]~parcelle_flore[,variable_x[1]]
 # 
-# plot(parcelle_flore[,variable_y[1]]~parcelle_flore[,variable_x[1]] 
-# )
+# plot(parcelle_flore[,variable_y[1]]~parcelle_flore[,variable_x[1]])
