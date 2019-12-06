@@ -9,12 +9,12 @@ parcelle <- parcelle_raw[,c("ID_Parcelle", "region", "code_parcelle.x", "plante_
                             "code_parc", "pct_mo", "pct_ph", "texture_sol", "annee_releve", "largeur_bordure")]
 parcelle[parcelle == ""] <- NA
 parcelle <- na.omit(parcelle)
-parcelle$climat <- as.character(parcelle$climat)
-parcelle$code_parcelle.x <- as.character(parcelle$code_parcelle.x)
-parcelle$plante_reference <- as.character(parcelle$plante_reference)
-parcelle$typo_pays_principale <- as.character(parcelle$typo_pays_principale)
-parcelle$topographie <- as.character(parcelle$topographie)
-parcelle$annee_releve <- as.character(parcelle$annee_releve)
+parcelle$climat <- as.factor(as.character(parcelle$climat))
+parcelle$code_parcelle.x <- as.factor(as.character(parcelle$code_parcelle.x))
+parcelle$plante_reference <- as.factor(as.character(parcelle$plante_reference))
+parcelle$typo_pays_principale <- as.factor(as.character(parcelle$typo_pays_principale))
+parcelle$topographie <- as.factor(as.character(parcelle$topographie))
+parcelle$annee_releve <- as.factor(as.character(parcelle$annee_releve))
 
 
 # split first column of flore_raw
