@@ -37,12 +37,22 @@ head(parcelle)
 
 ---
 
-##Exploration data with shiny
+## Exploration data with shiny
 
 
-```{r shiny, include = F}
-knitr::include_app("http://127.0.0.1:7203")
-# source("R/shiny/shiny_app.R")
+```{r echo = FALSE, out.width="50%"}
+source("R/shiny/server.R")
+
+shinyApp(ui = ui, server = server)
+
+# run_our_shiny_app <- function() {
+#   source("R/shiny/server.R")
+#   
+#   runApp(
+#     list(ui = ui,
+#          server = server)
+#   )
+# }
 
 ```
 
